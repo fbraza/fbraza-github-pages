@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/Blog",
+  pathPrefix: "/fbraza-github-pages",
   siteMetadata: {
     title: `Faouzi Braza`,
     description: `The personal website of Faouzi Braza.`,
