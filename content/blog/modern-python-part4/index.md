@@ -4,6 +4,8 @@ summary: "Insights about managing python projects after 2 years of work"
 date: "2023-01-03"
 tags:
     - Python
+    - Github
+    - Dev
 ---
 
 In three previous articles, I presented one possible flow to work with Python projects. After two years of professional experience I'd like to elaborate on some points.

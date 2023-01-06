@@ -3,7 +3,7 @@ title: Guide for optimizing performance with Spark
 summary: "Some good practive for Spark optimization"
 date: "2021-06-10"
 tags:
-    - Python
+    - Jvm
 ---
 
 Apache Spark is an in-memory processing and analytics engine designed to be particularly efficient to process Big Data. You can use Spark on an on-premise or a cloud-deployed Hadoop cluster or through the Databricks platform. In any of these setups, using Spark efficiently is critical if you want to control and reduce costs. For that you should be able to diagnose and resolve some common performance issues. These usually fall into the five following categories: spill, skew, shuffle, storage and serialization. Here we are going to go over each of them to understand what they are, see how to identify them and mitigate their impact on your workflow.
