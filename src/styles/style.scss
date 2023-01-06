@@ -1,0 +1,603 @@
+@import url("destyle.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+$color-bg: white;
+
+$color-text-primary: #404040;
+$color-text-secondary: lighten($color-text-primary, 15);
+$color-text-tertiary: lighten($color-text-primary, 30);
+
+$color-hero-primary: lighten(black, 96);
+$color-hero-secondary: black;
+$color-hero-tertiary: #0b7285;
+
+$color-header-primary: #404040;
+$color-header-secondary: lighten($color-header-primary, 65);
+
+$color-link-primary: #0b7285;
+
+$color-tag-bg: lightgray;
+$color-tag-border: #404040;
+$color-tag-text: #404040;
+
+$color-code-filename: lightgray;
+
+$color-callout-border: #eee;
+$color-callout-bg: #cce5ff;
+$color-callout-border-left: #004085;
+
+$color-callout-warning-bg: #fff3cd;
+$color-callout-warning-border-left: #f0ad4e;
+
+$color-callout-info-bg: #d1ecf1;
+$color-callout-info-border-left: #0c5460;
+
+$font-family: "Inter", sans-serif;
+$font-family-code: "Menlo", monospace;
+$font-size-std: 1.125rem;
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 0;
+}
+
+html {
+  box-sizing: border-box;
+  /* 16px for most setups, and works with 8pt grid*/
+  font-size: 1em;
+}
+
+body {
+  background-color: $color-bg;
+  color: $color-text-primary;
+  font-family: $font-family;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+/* General */
+
+/* Standardize margins & padding */
+a,
+article,
+b,
+blockquote,
+body,
+code,
+div,
+em,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+html,
+i,
+img,
+li,
+nav,
+ol,
+p,
+pre,
+section,
+small,
+span,
+strong,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: solid 0.25rem $color-link-primary;
+  color: $color-link-primary;
+}
+
+a.anchor.before {
+  border: none;
+}
+
+/* Reading elements */
+blockquote,
+li,
+p,
+ol,
+ul {
+  font-size: $font-size-std;
+}
+
+blockquote,
+p,
+ul,
+ol {
+  margin-bottom: 1.5rem;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5rem;
+}
+
+th {
+  border-bottom: 2px solid #dedede;
+}
+
+td {
+  border-bottom: 1px solid #dedede;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+  color: $color-header-primary;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+/* No margin for the first page heading */
+h1:not(:first-child),
+h2:not(:first-child),
+h3:not(:first-child),
+h4:not(:first-child),
+h5:not(:first-child),
+h6:not(:first-child) {
+  margin-top: 3rem !important;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 4px solid $color-header-secondary;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+}
+
+/* Lists */
+ul,
+ol {
+  padding-left: 4rem;
+  padding-right: 2rem; /* Maybe? */
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Code blocks */
+pre {
+  border: 0;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background: transparent;
+  border-radius: 0.25rem;
+}
+
+pre.grvsc-container {
+  padding: 1.5rem 1rem;
+}
+
+code {
+  font-size: 1rem;
+  font-family: $font-family-code;
+}
+
+/* Inline code block */
+:not(pre) > code {
+  font-weight: 500;
+  background: transparent;
+  padding: 0 0.25rem;
+  border: 1px solid #dedede;
+  border-radius: 0.25rem;
+}
+
+.code-filename {
+  background-color: $color-code-filename;
+  padding: 0.5rem 0.5rem 1.5rem 1rem;
+  margin-bottom: -1rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: $color-text-primary;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+/* Make code highlight extend all the way */
+.grvsc-code {
+  width: 100%;
+}
+
+kbd {
+  margin-right: 0.125rem;
+}
+
+/**
+ * KEYS.css
+ *
+ * A simple stylesheet for rendering beautiful keyboard-style elements.
+ *
+ * Author:  Michael Hüneburg
+ * Website: http://michaelhue.com/keyscss
+ * License: MIT License (see LICENSE.txt)
+ */
+
+/* Base style, essential for every key. */
+kbd,
+.key {
+  display: inline;
+  display: inline-block;
+  min-width: 1em;
+  padding: 0.2em 0.3em;
+  font: normal 1rem "Lucida Grande", Lucida, Arial, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  -moz-border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  border-radius: 0.3em;
+  border: none;
+  cursor: default;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+kbd[title],
+.key[title] {
+  cursor: help;
+}
+
+/* Dark style for display on light background. This is the default style. */
+kbd,
+kbd.dark,
+.dark-keys kbd,
+.key,
+.key.dark,
+.dark-keys .key {
+  background: rgb(80, 80, 80);
+  background: -moz-linear-gradient(top, rgb(60, 60, 60), rgb(80, 80, 80));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgb(60, 60, 60)),
+    to(rgb(80, 80, 80))
+  );
+  color: rgb(250, 250, 250);
+  text-shadow: -1px -1px 0 rgb(70, 70, 70);
+  -moz-box-shadow: inset 0 0 1px rgb(150, 150, 150),
+    inset 0 -0.05em 0.4em rgb(80, 80, 80), 0 0.1em 0 rgb(30, 30, 30),
+    0 0.1em 0.1em rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 1px rgb(150, 150, 150),
+    inset 0 -0.05em 0.4em rgb(80, 80, 80), 0 0.1em 0 rgb(30, 30, 30),
+    0 0.1em 0.1em rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 1px rgb(150, 150, 150),
+    inset 0 -0.05em 0.4em rgb(80, 80, 80), 0 0.1em 0 rgb(30, 30, 30),
+    0 0.1em 0.1em rgba(0, 0, 0, 0.3);
+}
+
+/* Light style for display on dark background. */
+kbd.light,
+.light-keys kbd,
+.key.light,
+.light-keys .key {
+  background: rgb(250, 250, 250);
+  background: -moz-linear-gradient(top, rgb(210, 210, 210), rgb(255, 255, 255));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgb(210, 210, 210)),
+    to(rgb(255, 255, 255))
+  );
+  color: rgb(50, 50, 50);
+  text-shadow: 0 0 2px rgb(255, 255, 255);
+  -moz-box-shadow: inset 0 0 1px rgb(255, 255, 255),
+    inset 0 0 0.4em rgb(200, 200, 200), 0 0.1em 0 rgb(130, 130, 130),
+    0 0.11em 0 rgba(0, 0, 0, 0.4), 0 0.1em 0.11em rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: inset 0 0 1px rgb(255, 255, 255),
+    inset 0 0 0.4em rgb(200, 200, 200), 0 0.1em 0 rgb(130, 130, 130),
+    0 0.11em 0 rgba(0, 0, 0, 0.4), 0 0.1em 0.11em rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0 0 1px rgb(255, 255, 255),
+    inset 0 0 0.4em rgb(200, 200, 200), 0 0.1em 0 rgb(130, 130, 130),
+    0 0.11em 0 rgba(0, 0, 0, 0.4), 0 0.1em 0.11em rgba(0, 0, 0, 0.9);
+}
+
+/* Layout */
+section {
+  margin-bottom: 3rem;
+}
+
+section:last-of-type {
+  margin-bottom: 4rem;
+}
+
+.container {
+  max-width: 800px;
+  padding: 0 1.5rem;
+  /* center */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation */
+.nav-container {
+  padding: 2.5rem 0;
+  margin: 0;
+  justify-content: right;
+}
+
+.nav-container a {
+  margin: 0 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border: none;
+}
+
+.nav-container a:first-child {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.nav-container a:last-child {
+  margin-right: 0;
+}
+
+/* Introduction */
+.introduction {
+  padding: 2.5rem 0;
+  background-color: $color-hero-primary;
+  color: $color-hero-secondary;
+}
+
+.introduction h1 {
+  font-size: 3rem;
+  color: inherit;
+}
+
+.introduction p {
+  font-size: 1.25rem;
+  padding-right: 7rem;
+  color: inherit;
+}
+
+.introduction a {
+  color: $color-hero-tertiary;
+  border-bottom: solid 0.25rem $color-hero-tertiary;
+}
+
+/* Post Listings */
+.post-item {
+  margin-bottom: 2.5rem;
+}
+
+.post-row {
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.post-row h3 {
+  font-size: 1.25rem;
+  line-height: 1;
+  margin: 0;
+  color: $color-text-primary;
+}
+
+.post-row time {
+  font-size: 0.75rem;
+  line-height: 0.75;
+  color: $color-text-tertiary;
+}
+
+.post-item p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  margin-right: 7rem; /* Maybe? */
+}
+
+/* Tag Styling */
+
+.flex-wrapped {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+  column-gap: 0.5rem;
+}
+
+.tag {
+  border-radius: 4px;
+  border: solid 1px $color-tag-border;
+  padding: 0.5rem 0.75rem;
+  line-height: 1.4;
+  background-color: $color-tag-bg;
+  color: $color-tag-text;
+}
+
+.tag svg {
+  margin-right: 0.5rem;
+}
+
+.tag.gatsby {
+  background-color: #663399;
+  color: #fff;
+}
+
+.tag.github {
+  background-color: #333;
+  color: #fafafa;
+}
+
+.tag.python {
+  background-color: #3773a5;
+  color: #ffd242;
+}
+
+.tag.sql-server {
+  background-color: #909ca9;
+  color: #b71f25;
+}
+
+/* Article Formatting */
+
+/* Give some breathing room between nav and headers */
+header {
+  margin-bottom: 3.5rem;
+}
+header h1 {
+  margin-top: 2.5rem;
+}
+
+article header > h1 {
+  margin-bottom: 1.5rem;
+}
+
+article img {
+  width: 100%;
+  height: 100%;
+}
+
+.article-time {
+  font-size: 1rem;
+}
+
+.article-tags i {
+  margin-right: 0.25rem;
+}
+
+.call-out {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid $color-callout-border;
+  border-left-width: 0.25rem;
+  border-radius: 0.25rem;
+  border-left-color: $color-callout-border-left;
+  background-color: $color-callout-bg;
+}
+
+.call-out-warning {
+  background-color: $color-callout-warning-bg;
+  border-left-color: $color-callout-warning-border-left;
+}
+
+.call-out-info {
+  background-color: $color-callout-info-bg;
+  border-left-color: $color-callout-info-border-left;
+}
+
+.call-out p {
+  font-size: 1rem;
+}
+
+.call-out h4 {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.call-out p:last-of-type {
+  margin-bottom: 0;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  padding: 1.3rem 1.5rem;
+  font-weight: 500;
+
+  cite {
+      display: block;
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      text-align: left;
+      font-weight: 300;
+    }
+  
+    p {
+      display: inline;
+      font-size: 1.2rem;
+    }
+}
+
+/* Footer */
+footer {
+  padding: 3rem 0;
+}
+
+.footer-nav {
+  justify-content: space-between;
+  padding: 0 0 1rem 0;
+  border-bottom: solid 4px gainsboro;
+}
+
+.footer-nav nav a {
+  margin: 0 0.5rem;
+  border: none;
+  color: $color-text-secondary;
+}
+
+.footer-nav nav a:first-child {
+  margin-left: 0;
+}
+
+.footer-nav nav a:last-child {
+  margin-right: 0;
+}
+
+footer p {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  color: $color-text-tertiary;
+  font-size: 0.75rem;
+}
