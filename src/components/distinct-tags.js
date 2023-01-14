@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCodePullRequest } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faPython, faDev, faGoogle, faJava} from "@fortawesome/free-brands-svg-icons"
+import { faGithub, faPython, faDev, faGoogle, faJava, faBitcoin } from "@fortawesome/free-brands-svg-icons"
 
 const _ = require("lodash");
 
@@ -23,6 +23,7 @@ export default function DistinctTags() {
         "Jvm": faJava,
         "Google": faGoogle,
         "Github": faGithub,
+        "Crypto": faBitcoin
     }
 
     return (

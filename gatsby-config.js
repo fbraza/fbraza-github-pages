@@ -58,6 +58,9 @@ module.exports = {
             options: {
               theme: `Panda Syntax`,
               extensions: ['theme-panda'], // Or install your favorite theme from GitHub
+              inlineCode: {
+                marker: '•'
+              },
               languageAliases: {
                 bash: 'sh',
                 ini: "ini"

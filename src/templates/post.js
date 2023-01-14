@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 // import { faCode, faComment, faDatabase, faInfoCircle } from "@fortawesome/free-solid-svg-icons"
-import { faGithub, faPython, faDev, faGoogle, faJava} from "@fortawesome/free-brands-svg-icons"
+import { faGithub, faPython, faDev, faGoogle, faJava, faBitcoin } from "@fortawesome/free-brands-svg-icons"
 
 import "katex/dist/katex.min.css"
 
@@ -21,6 +21,7 @@ export default function BlogPost({ data }) {
     "Jvm": faJava,
     "Google": faGoogle,
     "Github": faGithub,
+    "Crypto": faBitcoin
 }
 
   return (
