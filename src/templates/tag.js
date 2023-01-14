@@ -1,15 +1,15 @@
-import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { graphql } from "gatsby"
-import PostListing from "../components/post-listing"
+import React from "react";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { graphql } from "gatsby";
+import PostListing from "../components/post-listing";
 
 const Tags = ({ pageContext, data }) => {
-  const { tag } = pageContext
-  const postEdges = data.allMarkdownRemark.edges
-  const totalPosts = data.allMarkdownRemark.totalCount
+  const { tag } = pageContext;
+  const postEdges = data.allMarkdownRemark.edges;
+  const totalPosts = data.allMarkdownRemark.totalCount;
 
-  console.log(postEdges)
+  console.log(postEdges);
 
   return (
     <Layout>
@@ -20,7 +20,8 @@ const Tags = ({ pageContext, data }) => {
       <div className="container">
         <header>
           <h1>
-            Articles tagged <u>{tag}</u> <span className="post-count">({totalPosts})</span>
+            Articles tagged <u>{tag}</u>{" "}
+            <span className="post-count">({totalPosts})</span>
           </h1>
         </header>
         <section>
@@ -28,16 +29,16 @@ const Tags = ({ pageContext, data }) => {
         </section>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Tags
+export default Tags;
 
 export const pageQuery = graphql`
-  query($tag: String) {
+  query ($tag: String) {
     allMarkdownRemark(
       limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount
@@ -54,4 +55,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

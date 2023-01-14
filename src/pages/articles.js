@@ -1,12 +1,12 @@
-import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import PostListing from "../components/post-listing"
-import { graphql } from "gatsby"
-import DistinctTags from "../components/distinct-tags"
+import React from "react";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import PostListing from "../components/post-listing";
+import { graphql } from "gatsby";
+import DistinctTags from "../components/distinct-tags";
 
 const ArticlePage = ({ data }) => {
-  const postEdges = data.allMarkdownRemark.edges
+  const postEdges = data.allMarkdownRemark.edges;
 
   return (
     <Layout>
@@ -25,15 +25,15 @@ const ArticlePage = ({ data }) => {
         </div>
       </section>
     </Layout>
-  )
-}
+  );
+};
 
-export default ArticlePage
+export default ArticlePage;
 
 export const query = graphql`
   query PageQuery {
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: { fileAbsolutePath: { regex: "*/content/blog/" } }
     ) {
       edges {
@@ -50,4 +50,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

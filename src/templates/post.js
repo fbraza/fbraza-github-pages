@@ -21,7 +21,7 @@ export default function BlogPost({ data }) {
     "Jvm": faJava,
     "Google": faGoogle,
     "Github": faGithub,
-    "Crypto": faBitcoin
+    "Bitcoin": faBitcoin
 }
 
   return (

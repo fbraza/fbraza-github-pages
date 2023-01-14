@@ -1,13 +1,13 @@
-import React from "react"
+import React from "react";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { graphql, Link } from "gatsby"
-import PostListing from "../components/post-listing"
-import DistinctTags from "../components/distinct-tags"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { graphql, Link } from "gatsby";
+import PostListing from "../components/post-listing";
+import DistinctTags from "../components/distinct-tags";
 
 const IndexPage = ({ data }) => {
-  const postEdges = data.allMarkdownRemark.edges
+  const postEdges = data.allMarkdownRemark.edges;
 
   return (
     <Layout>
@@ -18,8 +18,9 @@ const IndexPage = ({ data }) => {
         <div class="container">
           <h1>Hi, I'm Faouzi.</h1>
           <p>
-            I'm a Machine learning engineer. I'll try to keep track of my journey if this field
-            and will share some tecnical details, learnings and interests with you.
+            I'm a Machine learning engineer. I'll try to keep track of my
+            journey if this field and will share some tecnical details,
+            learnings and interests with you.
           </p>
           <p>
             Feel free to read my <Link to="/articles/">posts</Link> or{" "}
@@ -46,16 +47,16 @@ const IndexPage = ({ data }) => {
         </div>
       </section>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
       limit: 5
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: { fileAbsolutePath: { regex: "*/content/blog/" } }
     ) {
       edges {
@@ -71,4 +72,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
