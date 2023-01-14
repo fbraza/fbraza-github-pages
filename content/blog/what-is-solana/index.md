@@ -31,7 +31,6 @@ The solana coin is called `SOL`. Know that `SOL` is:
 
 The total supply was around 500 millions at starting. During the initial coin offering around 36% of their total supply were sold at a very low pric (25 cents). Another 13% went to the founders of the project and 10% to the Solana foundation. Finally the remaining 39% is used to fund initiatives and communities.
 
-
 ## Links
 
 - [Solana](https://solana.com/fr)
