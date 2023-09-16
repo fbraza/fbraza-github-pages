@@ -10,7 +10,7 @@ tags:
 
 Vertex AI pipeline allows you to orchestrate different steps of a data pipeline. Each step of the pipeline is an autonomous piece of code that will be executed in its own container. Each of these steps can accept inputs and generate outputs for downstream steps. Altogether the steps define a workflow that can be represented as an directed acyclic graph (DAG) (Figure 1). Here I am going to gather some personal notes and feedbacks related to my own experience with this cloud service and try to provide some personal advises.
 
-<p><img src="Vertexai.png" class="article-img" title="Vertexai" alt="Vertexai"></p>
+<p><img src="2023-05-06-overview-vertexai-figure-01.png" class="article-img" title="Vertexai" alt="Vertexai"></p>
 
 *Figure 1* : Example of a vertex ai pipeline
 
@@ -290,20 +290,20 @@ def component_two(processed_data: Input[Dataset], metrics: Output[Dataset]):
 
 First you need to use the `aiplatform.init` function and provide an experiment name. An experiment is a logical unit in Vertex that can contain several runs. On the Vertex.ai page you can find them on the left under the `MODEL DEVELOPMENT` tab (Figure 2).
 
-<p><img src="experiments.png" class="article-img" title="Where to find experiments" alt="experiments.png"></p>
+<p><img src="2023-05-06-overview-vertexai-figure-02.png" class="article-img" title="Where to find experiments" alt="experiments.png"></p>
 
 *Figure 2* : The MODEL DEVELOPMENT tab
 
 
 Next, you just need to use the context manager `aiplatform.start_run()` to which you need to pass an identifier (`run`). Inside the context manager scope implement your logic for model training and metrics computations. If you need to log the model parameters use the `log_params()` function. The parameters need to be of type `dict`. Similarly you can use `log_metrics()` to log your model metrics. Here again provide the metrics as a dictionnary. Once your model is trained you can find the metrics on your vertex environment. First click on `Experiments` to list your own experiments (Figure 3).
 
-<p><img src="list_experiments.png" class="article-img" title="Experiments list" alt="list_experiments.png"></p>
+<p><img src="2023-05-06-overview-vertexai-figure-03.png" class="article-img" title="Experiments list" alt="list_experiments.png"></p>
 
 *Figure 3* : The Experiments tab
 
 Finally, click on one of them to list your runs with all your logged metrics and parameters (Figure 4).
 
-<p><img src="log_metrics.png" class="article-img" title="Run metrics" alt="log_metrics.png"></p>
+<p><img src="2023-05-06-overview-vertexai-figure-04.png" class="article-img" title="Run metrics" alt="log_metrics.png"></p>
 
 *Figure 4* : An example run with logged metrics
 
