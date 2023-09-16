@@ -18,9 +18,9 @@ const IndexPage = ({ data }) => {
             Hi, I'm Faouzi 👋
           </h1>
           <p className="text-xl mb-6 leading-9 text-slate-700 dark:text-gray-400">
-            I'm a Data Professional that specialises in SQL, Python, and Data
-            Visualisation. My website is a collection of the things I've learned
-            over the years - a place to document those "Aha!" moments.
+            I'm a data engineer with a sniff of DevOps who likes to build innovative
+            data software and pipelines data driven challenges. I'll talk here about
+            things I face during my work and will use this blog as a journal to myself.
           </p>
           <p className="text-xl mb-6 leading-9 text-slate-700 dark:text-gray-400">
             Feel free to read my <Link to={"/articles"} className="text-blue-600 hover:underline dark:text-blue-500">posts</Link> or <Link to={"/contact"} className="text-blue-600 hover:underline dark:text-blue-500">get in touch</Link>.
