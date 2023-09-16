@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="flex flex-wrap justify-center gap-12">
               <Link to={"/articles"} className="hover:underline hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-500">Blog</Link>
               <Link to={"/about"} className="hover:underline hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-500">About</Link>
-              <Link to={"/about/#contact"} className="hover:underline hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-500">Contact</Link>
+              <Link to={"/contact"} className="hover:underline hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-500">Contact</Link>
               <a
                 href="https://github.com/fbraza"
                 target="_blank"
