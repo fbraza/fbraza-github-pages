@@ -2,11 +2,11 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  pathPrefix: "/fbraza-github-pages",
   siteMetadata: {
     title: `Faouzi Braza`,
-    description: `Data & Software engineer.`,
-    siteUrl: `https://fbraza.github.io/fbraza-github-pages/`,
-    author: "Faouzi Braza",
+    description: `The personal website of Faouzi Braza.`,
+    author: `Faouzi Braza`,
   },
   plugins: [
     "gatsby-plugin-image",
