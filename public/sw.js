@@ -27,21 +27,21 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-610845a358108533eb4e.js"
+    "url": "webpack-runtime-27c37f9ee3c62dc97aea.js"
   },
   {
     "url": "framework-0f353f8da5dadf6a9cbe.js"
   },
   {
-    "url": "app-f2d93ffd70821bbc21b2.js"
+    "url": "app-350cf1cc0345df8b41b3.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "7e01962a79b4b702eacb903fb5da4730"
+    "revision": "1827e42a0a01719269c537a7e4ffb206"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "3a21ca5ba5ddc6a5a87a8df022d61077"
+    "revision": "93ba17c001307113f27b525e06232295"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -146,12 +146,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/fbraza-github-pages`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-f2d93ffd70821bbc21b2.js`))) {
+  if (!resources || !(await caches.match(`/fbraza-github-pages/app-350cf1cc0345df8b41b3.js`))) {
     return await fetch(event.request)
   }
 
@@ -164,7 +164,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/fbraza-github-pages/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })

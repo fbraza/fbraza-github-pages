@@ -13,7 +13,7 @@ At my work we process our data using Google Cloud services. For different use ca
 
 ## Our data flow
 
-In our data infrastructure we use a Scheduler that pings one of our Cloud Run service that we call the `poller`. The role of the `poller` is, once triggered, to scan a Google Cloud bucket where are stored our new data. If new data is found, it sends the necessary metadata to another Cloud Run service, called the `worker`. The `worker` will then process the data. If the processing succeeds or fails the `worker` sends back an HTTP message (HTTP code `200` or `500`) that prompts the `poller` to move the processed file to the required bucket.  
+In our data infrastructure we use a Scheduler that pings one of our Cloud Run service that we call the `poller`. The role of the `poller` is, once triggered, to scan a Google Cloud bucket where are stored our new data. If new data is found, it sends the necessary metadata to another Cloud Run service, called the `worker`. The `worker` will then process the data. If the processing succeeds or fails the `worker` sends back an HTTP message (HTTP code `200` or `500`) that prompts the `poller` to move the processed file to the required bucket.
 
 
 ## Scheduler to Cloud Run

@@ -33,7 +33,7 @@ Alternatives are not lacking. But which one should you choose? Which one should 
 
 ### The type 1 architecture: a monolithic approach
 
-<p><img src="2021-12-05-Own-your-metadata-with-metadata-hubs-figure-01.png" class="article-img" title="Type 1 architecture" alt="Type 1 architecture"></p>
+<p><img src="./2021-12-05-Own-your-metadata-with-metadata-hubs-figure-01.png" class="article-img" title="Type 1 architecture" alt="Type 1 architecture"></p>
 
 *Figure 1:* Type 1 architecture: reproduced and modified from [here](https://engineering.linkedin.com/blog/2020/datahub-popular-metadata-architectures-explained)
 
