@@ -31,7 +31,7 @@ const Footer = () => {
             </div>
           </nav>
           <div className="mt-8 flex flex-wrap justify-center text-sm text-slate-600 dark:text-slate-500">
-            &copy; {new Date().getFullYear()} Andrew Villazon. All rights
+            &copy; {new Date().getFullYear()} Faouzi Braza. All rights
             reserved.
           </div>
         </div>
