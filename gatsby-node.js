@@ -1,92 +1,66 @@
-const { createFilePath } = require(`gatsby-source-filesystem`);
-const path = require(`path`);
-const _ = require("lodash");
+const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require("path")
+const _ = require("lodash")
 
-/*
- Creates a slug (path) on a node based on where it is in the file
- system. Once on the node we can use the slug to dynamically
- generate pages.
-*/
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions;
-  const contentPath = `content/blog`;
+  const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: contentPath });
+    const slugRaw = createFilePath({ node, getNode, basePath: `content` })
+    const slug = slugRaw
+      .split("/")
+      .filter((part) => part)
+      .at(-1)
 
-    createNodeField({ node, name: `slug`, value: slug });
+    createNodeField({
+      node,
+      name: `slug`,
+      value: `/${slug}/`,
+    })
+
+    /*
+    We can also use gatsby-transformer-remark to create non-blog content from
+    markdown. This will happen automatically, but we need to be able to differentiate
+    them in queries.
+    */
+    let contentType
+    if (node.fileAbsolutePath.includes("content/posts")) {
+      contentType = "post"
+    }
+    if (node.fileAbsolutePath.includes("content/pages")) {
+      contentType = "page"
+    }
+
+    createNodeField({
+      node,
+      name: `contentType`,
+      value: contentType,
+    })
   }
-};
+}
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const { createPage } = actions
 
   const result = await graphql(`
     query {
       allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
-            }
-            fileAbsolutePath
-          }
-        }
-      }
-      tagsGroup: allMarkdownRemark {
-        group(field: { frontmatter: { tags: SELECT } }) {
-          fieldValue
-        }
+        distinct(field: { frontmatter: { tags: SELECT } })
       }
     }
-  `);
+  `)
 
-  // Parse graphql data
-  const markdownContent = result.data.allMarkdownRemark.edges;
+  // Make tag pages
+  const tagTemplate = path.resolve("src/templates/tag.js")
+  const tags = result.data.allMarkdownRemark.distinct
 
-  const tags = result.data.tagsGroup.group;
-  const blogPosts = markdownContent.filter((post) =>
-    post.node.fileAbsolutePath.includes("content/blog")
-  );
-  const sitePages = markdownContent.filter((page) =>
-    page.node.fileAbsolutePath.includes("content/site")
-  );
-
-  // Templates to render data
-  const tagTemplate = path.resolve("src/templates/tag.js");
-  const blogPostTemplate = path.resolve("src/templates/post.js");
-  const pageTemplate = path.resolve("src/templates/site-content.js");
-
-  // Create blog post pages
-  blogPosts.forEach(({ node }) => {
-    createPage({
-      path: node.fields.slug,
-      component: blogPostTemplate,
-      context: {
-        slug: node.fields.slug,
-      },
-    });
-  });
-
-  // Create content pages
-  sitePages.forEach(({ node }) => {
-    createPage({
-      path: node.fields.slug,
-      component: pageTemplate,
-      context: {
-        slug: node.fields.slug,
-      },
-    });
-  });
-
-  // Create tag pages
   tags.forEach((tag) => {
     createPage({
-      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      path: `/tags/${_.kebabCase(tag)}/`,
       component: tagTemplate,
       context: {
-        tag: tag.fieldValue,
+        tag: tag,
       },
-    });
-  });
-};
+    })
+  })
+}

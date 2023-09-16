@@ -1,53 +1,53 @@
-import React from "react";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import PostListing from "../components/post-listing";
-import { graphql } from "gatsby";
-import DistinctTags from "../components/distinct-tags";
+import { graphql } from "gatsby"
+import * as React from "react"
+import Posts from "../components/Posts"
+import Tags from "../components/Tags"
+import Layout from "../components/Layout"
+import { Seo } from "../components/Seo"
 
 const ArticlePage = ({ data }) => {
-  const postEdges = data.allMarkdownRemark.edges;
+  const posts = data.allMarkdownRemark.nodes
+  const tags = data.allMarkdownRemark.distinct
 
   return (
     <Layout>
-      <SEO title="Articles" />
       <section>
-        <div className="container">
-          <header>
-            <h1>Articles</h1>
-            <div className="flex-wrapped">
-              <DistinctTags />
-            </div>
-          </header>
-          <section>
-            <PostListing postEdges={postEdges} />
-          </section>
+        <div className="container mx-auto">
+          <h1 className="mb-12 text-5xl font-extrabold tracking-tight dark:text-slate-300">
+            Articles
+          </h1>
+          <h2 className="text-3xl font-semibold mb-8 dark:text-slate-300">Tags</h2>
+          <div className="flex mb-12">
+            <Tags tags={tags} />
+          </div>
+          <Posts posts={posts} groupByYears={true} />
         </div>
       </section>
     </Layout>
-  );
-};
-
-export default ArticlePage;
+  )
+}
 
 export const query = graphql`
-  query PageQuery {
+  query {
     allMarkdownRemark(
       sort: { frontmatter: { date: DESC } }
-      filter: { fileAbsolutePath: { regex: "*/content/blog/" } }
+      filter: { fields: { contentType: { eq: "post" } } }
     ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMM")
-          }
-          fields {
-            slug
-          }
+      nodes {
+        frontmatter {
+          date
+          title
+        }
+        id
+        fields {
+          slug
         }
       }
+      distinct(field: { frontmatter: { tags: SELECT } })
     }
   }
-`;
+`
+
+export const Head = () => <Seo title={"Articles"}/>
+
+export default ArticlePage

@@ -1,58 +1,43 @@
-import React from "react";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import { graphql } from "gatsby";
-import PostListing from "../components/post-listing";
+import React from "react"
+import { graphql } from "gatsby"
+import Posts from "../components/Posts"
+import Layout from "../components/Layout"
 
 const Tags = ({ pageContext, data }) => {
-  const { tag } = pageContext;
-  const postEdges = data.allMarkdownRemark.edges;
-  const totalPosts = data.allMarkdownRemark.totalCount;
-
-  console.log(postEdges);
+  const { tag } = pageContext
+  const { nodes, totalCount } = data.allMarkdownRemark
 
   return (
     <Layout>
-      <SEO
-        title={`Articles tagged as ${tag}`}
-        description={`Articles tagged as ${tag}`}
-      />
-      <div className="container">
-        <header>
-          <h1>
-            Articles tagged <u>{tag}</u>{" "}
-            <span className="post-count">({totalPosts})</span>
-          </h1>
-        </header>
-        <section>
-          <PostListing postEdges={postEdges} />
-        </section>
-      </div>
+      <section>
+        <div className="container mx-auto">
+        <h1 className="mb-12 text-5xl font-extrabold tracking-tight dark:text-slate-50">Posts tagged <u>{tag}</u> ({totalCount})</h1>
+          <Posts posts={nodes} groupByYears={true} />
+        </div>
+      </section>
     </Layout>
-  );
-};
+  )
+}
 
-export default Tags;
+export default Tags
 
 export const pageQuery = graphql`
   query ($tag: String) {
     allMarkdownRemark(
-      limit: 2000
       sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            date(formatString: "DD MMM")
-          }
+      nodes {
+        frontmatter {
+          date
+          title
+        }
+        id
+        fields {
+          slug
         }
       }
     }
   }
-`;
+`

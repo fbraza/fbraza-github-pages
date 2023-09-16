@@ -1,90 +1,81 @@
+/**
+ * @type {import('gatsby').GatsbyConfig}
+ */
 module.exports = {
   pathPrefix: "/fbraza-github-pages",
   siteMetadata: {
     title: `Faouzi Braza`,
     description: `The personal website of Faouzi Braza.`,
+    siteUrl: `https://fbraza.github.io/fbraza-github-pages/`,
     author: `Faouzi Braza`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-plugin-manifest",
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        icon: "src/images/icon.png",
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `blog`,
-        path: `${__dirname}/content/blog`,
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `site`,
-        path: `${__dirname}/content/site`,
-      }
-    },
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-copy-linked-files`,
+          "gatsby-remark-autolink-headers",
           {
-            resolve: `gatsby-remark-katex`,
+            resolve: `gatsby-remark-images`,
             options: {
-              strict: `ignore`
-            }
+              maxWidth: 1024,
+            },
           },
           {
             resolve: `gatsby-remark-table-of-contents`,
             options: {
               exclude: "Contents",
-              tight: false,
               fromHeading: 2,
               toHeading: 2,
-              className: "table-of-contents"
+              className: "table-of-contents",
             },
           },
-          `gatsby-remark-autolink-headers`,
-          `gatsby-remark-images`,
-          `gatsby-remark-copy-linked-files`,
           {
-            resolve: `gatsby-remark-vscode`,
-            options: {
-              theme: `Panda Syntax`,
-              extensions: ['theme-panda'], // Or install your favorite theme from GitHub
-              inlineCode: {
-                marker: '•'
-              },
-              languageAliases: {
-                bash: 'sh',
-                ini: "ini"
-              }
-            },
+            resolve: `gatsby-remark-prismjs`,
+            options: { classPrefix: "language-", noInlineHighlight: true },
           },
         ],
       },
     },
-    `gatsby-plugin-sharp`,
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `Faouzi Braza`,
-        short_name: `Faouzi`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `standalone`,
-        icon: `src/images/site-icon.png`, // This path is relative to the root of the site.
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `content`,
+        path: `${__dirname}/content/`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-plugin-use-dark-mode",
+      options: {
+        classNameDark: "dark",
+      },
+    },
   ],
 }
