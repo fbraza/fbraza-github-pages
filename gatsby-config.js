@@ -6,6 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Faouzi Braza`,
     description: `The personal website of Faouzi Braza.`,
+    siteUrl: `https://fbraza.github.io/fbraza-github-pages/`,
     author: `Faouzi Braza`,
   },
   plugins: [
