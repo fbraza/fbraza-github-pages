@@ -6,7 +6,7 @@ const Navigation = () => {
   const navItems = [
     { url: "/articles", text: "Blog" },
     { url: "/about", text: "About" },
-    { url: "/about/#contact", text: "Contact" },
+    { url: "/contact", text: "Contact" },
   ];
 
   return (
@@ -14,7 +14,7 @@ const Navigation = () => {
       <nav>
         <div className="container mx-auto">
           <div className="text-2xl mb-2 font-bold text-gray-800 dark:text-slate-300">
-            <Link to="/">Andrew Villazon</Link>
+            <Link to="/">Faouzi Braza</Link>
           </div>
           <div className="container mx-auto flex justify-between items-center">
             <div className="flex space-x-6">

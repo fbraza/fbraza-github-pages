@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Faouzi Braza`,
     description: `The personal website of Faouzi Braza.`,
-    siteUrl: `https://fbraza.github.io/fbraza-github-pages/`,
+    siteUrl: `https://fbraza.github.io/fbraza-github-pages`,
     author: `Faouzi Braza`,
   },
   plugins: [
@@ -52,24 +52,22 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: `${__dirname}/src/images`,
       },
-      __key: "images",
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: "pages",
-        path: "./src/pages/",
-      },
-      __key: "pages",
+        name: `site`,
+        path: `${__dirname}/content/site`,
+      }
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: `content`,
-        path: `${__dirname}/content/`,
-      },
+        name: `posts`,
+        path: `${__dirname}/content/posts`,
+      }
     },
     {
       resolve: "gatsby-plugin-use-dark-mode",
