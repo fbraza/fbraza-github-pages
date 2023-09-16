@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
       <section>
         <div className="container mx-auto pr-28">
           <h1 className="mb-8 text-6xl font-extrabold tracking-tight text-slate-900 dark:text-slate-300">
-            Hi, I'm Andrew 👋
+            Hi, I'm Faouzi 👋
           </h1>
           <p className="text-xl mb-6 leading-9 text-slate-700 dark:text-gray-400">
             I'm a Data Professional that specialises in SQL, Python, and Data

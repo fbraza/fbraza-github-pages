@@ -3,10 +3,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Andrew Villazon`,
-    description: `Data Professional. My website and blog.`,
-    siteUrl: `https://www.andrewvillazon.com`,
-    author: "Andrew Villazon",
+    title: `Faouzi Braza`,
+    description: `Data & Software engineer.`,
+    siteUrl: `https://fbraza.github.io/fbraza-github-pages/`,
+    author: "Faouzi Braza",
   },
   plugins: [
     "gatsby-plugin-image",
