@@ -43,9 +43,9 @@ id_token = google.oauth2.id_token.fetch_id_token(auth_req, audiance)
 
 The function `fetch_id_token` acquires ID token from your environment in the following order:
 
-1. If the environment variable GOOGLE_APPLICATION_CREDENTIALS is set to the path of a valid service account JSON file, then ID token is acquired using this service account credentials.
-2. If the application is running in `Compute Engine`, `App Engine` or `Cloud Run`, then the ID token are obtained from the metadata server.
-3. If metadata server doesn't exist and no valid service account credentials are found, raise the `google.auth.exceptions DefaultCredentialsError` error
+1. If the environment variable `GOOGLE_APPLICATION_CREDENTIALS` is set to the path of a valid service account `JSON` file, then ID token is acquired using this service account credentials.
+2. If the application is running in `Compute Engine`, `App Engine` or `Cloud Run`, then the ID token is obtained from the metadata server.
+3. If metadata server doesn't exist and no valid service account credentials are found, it raise the `google.auth.exceptions DefaultCredentialsError` error.
 
 ## Wrap-up
 
