@@ -78,7 +78,7 @@
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">id_token <span class="token operator">=</span> google<span class="token punctuation">.</span>oauth2<span class="token punctuation">.</span>id_token<span class="token punctuation">.</span>fetch_id_token<span class="token punctuation">(</span>auth_req<span class="token punctuation">,</span> audiance<span class="token punctuation">)</span></code></pre></div>
 <p>The function <code>fetch_id_token</code> acquires ID token from your environment in the following order:</p>
 <ol>
-<li>If the environment variable <code>GOOGLE_APPLICATION_CREDENTIALS`` is set to the path of a valid service account </code>JSON` file, then ID token is acquired using this service account credentials.</li>
+<li>If the environment variable <code>GOOGLE_APPLICATION_CREDENTIALS</code> is set to the path of a valid service account <code>JSON</code> file, then ID token is acquired using this service account credentials.</li>
 <li>If the application is running in <code>Compute Engine</code>, <code>App Engine</code> or <code>Cloud Run</code>, then the ID token is obtained from the metadata server.</li>
 <li>If metadata server doesn't exist and no valid service account credentials are found, it raise the <code>google.auth.exceptions DefaultCredentialsError</code> error.</li>
 </ol>
