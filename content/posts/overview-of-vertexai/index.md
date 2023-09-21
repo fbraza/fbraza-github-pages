@@ -3,7 +3,7 @@ title: "An overview of Vertex.ai"
 date: "2023-05-06"
 tags:
     - Python
-    - Google
+    - Google Cloud
 ---
 
 [Vertex.ai](https://cloud.google.com/vertex-ai?hl=us) is a Google Cloud service that enables the user to build, deploy, and scale data pipelines and machine learning models. It includes some services to track and manage model artifacts, performances and metrics. Google provide a [Python SDK](https://cloud.google.com/vertex-ai/docs/start/use-vertex-ai-python-sdk) that permits the user to interact directly with the different services.

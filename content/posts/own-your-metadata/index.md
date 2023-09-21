@@ -4,6 +4,7 @@ summary: "State of the art for metadata hub Open Source solutions"
 date: "2022-12-05"
 tags:
     - Python
+    - Data
 ---
 
 Let's imagine you are a freshly recruited Data Scientist. During one of your stand-up, your product owner gives you a couple of tasks that implies interacting with several data sources. You quickly realize that your main challenge here, even before fulfilling your task will be first to know your data:

@@ -5,7 +5,7 @@ date: "2021-06-29"
 tags:
     - Python
     - Github
-    - Dev
+    - DevOps
 ---
 
 To propose a well-maintained and usable Python package to the open-source community or even inside your company, you are expected to accomplish a set of critical steps. First ensure that your code is unit tested. Second respect the common writing and format styles. Automate these steps and integrate them in a continuous integration pipeline to avoid any regression that stems from modifications applied to your source code. Finally, provide enough documentation for future users. Once done it is common to publish your Python package on the [Python Package Index (PyPI)](https://pypi.org/). Here we are going to see how to accomplish each of these steps using [Poetry](https://python-poetry.org/), [Tox](https://tox.readthedocs.io/en/latest/) and [GitHub Actions](https://github.com/features/actions). The code used for our use case can be found [on our repository](https://github.com/adaltas/summarize_dataframe).

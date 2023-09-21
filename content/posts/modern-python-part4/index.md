@@ -5,7 +5,7 @@ date: "2023-01-03"
 tags:
     - Python
     - Github
-    - Dev
+    - DevOps
 ---
 
 In three previous articles, I presented one possible flow to work with Python projects. After two years of professional experience I'd like to elaborate on some points.
