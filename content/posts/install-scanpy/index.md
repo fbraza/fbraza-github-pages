@@ -3,6 +3,7 @@ title: "Installation of Scanpy on a Mac M1"
 date: "2022-02-10"
 tags:
     - Python
+    - Bioinformatics
 ---
 
 Apple decided to change the architecture of their processor. They use ARM chips that they develop in-house. This change comes with some trade-off for python programming especially in the data science world. I had to use some data science and bioinformatic libraries and faced issues regarding their installation. The most notable one was with the library scanpy. First the library needs some system dependencies. Second, these some Python libraries that are just not available yet for the ARM chips. Indeed their wheels is still note ready to be used on PyPi. Here I kept note to remember the steps needed for the installation of scanpy. For managing my environments I use `poetry`, `conda` or `pipenv`. Unfortunately I did not manage to install Scanpy via `pip` depedent package managers (both `pipenv` or `poetry` do not work). The only alternative that worked was`conda`. But to be operational, you first need to install and configure some dependencies.

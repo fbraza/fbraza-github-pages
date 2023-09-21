@@ -5,7 +5,7 @@ date: "2021-06-09"
 tags:
     - Python
     - Github
-    - Dev
+    - DevOps
 ---
 
 When learning a programming language, the focus is essentially on understanding the syntax, the code style, and the underlying concepts. With time, you become sufficiently comfortable with the language and you start writing programs solving new exciting problems.

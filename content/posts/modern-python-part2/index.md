@@ -5,7 +5,7 @@ date: "2021-06-24"
 tags:
     - Python
     - Github
-    - Dev
+    - DevOps
 ---
 
 Good software engineering practices always bring a lot of long-term benefits. For example, writing unit tests permits you to maintain large codebases and ensures that a specific piece of your code behaves as expected. Writing consistent Git commits also enhance the collaboration between the project stakeholders. Well-crafted Git commit messages open the door to automatic versioning and generated change log files. Consequently, a lot of attempts are currently ongoing and applied to normalize the messages written in our Git commits.

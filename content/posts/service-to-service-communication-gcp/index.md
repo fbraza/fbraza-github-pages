@@ -2,8 +2,7 @@
 title: "Service to service communication in Google Cloud"
 date: "2023-02-13"
 tags:
-    - Python
-    - Google
+    - Google Cloud
 ---
 
 At my work we process our data using Google Cloud services. For different use cases, we mainly use Cloud functions to process files and Cloud Run services to generate features, sleep scores and predictions. We use PubSub to trigger our cloud functions and, Cloud Task or Scheduler to trigger our respective Cloud Run services. All of them use HTTP requests to communicate with each others. By default, communication with Cloud run services requires authentication. Here, I am going to present how to set up authenticated communications with google Cloud Run services.
