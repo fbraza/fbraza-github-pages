@@ -1,7 +1,7 @@
 ---
 title: Globalize the scope of a python function
 summary: "Globalize the scope of a python function"
-date: "2021-08-23"
+date: "2023-08-23"
 tags:
     - Python
 ---
