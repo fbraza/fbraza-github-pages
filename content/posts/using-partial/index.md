@@ -1,7 +1,7 @@
 ---
 title: Using partial
 summary: "Using partial"
-date: "2023-09-10"
+date: "2023-10-01"
 tags:
     - Python
 ---
@@ -182,3 +182,11 @@ with DAG(
         ),
     )
 ```
+
+## Conclusion
+
+I am glad I find my way through `partial`. It was specifficaly designed for this use case and it is very elegant to use in your code.
+
+## References
+
+- https://docs.python.org/3/library/functools.html
