@@ -1,0 +1,17 @@
+[
+  {
+    "name": "ToCase",
+    "url": "https://github.com/fbraza/python-tocase",
+    "desc": "A python library to recase your strings"
+  },
+  {
+    "name": "Fruit Detect",
+    "url": "https://github.com/fbraza/FruitDetect",
+    "desc": "If you need an AI app to detect some fruits ^_^"
+  },
+  {
+    "name": "DFSLib",
+    "url": "https://github.com/fbraza/scala-dfs-lib",
+    "desc": "DFS-Lib is a scala flavoured api to the Hadoop java filesystem api "
+  }
+]
