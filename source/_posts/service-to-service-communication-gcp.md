@@ -15,7 +15,7 @@ In our data infrastructure we use a Scheduler that pings one of our Cloud Run se
 
 Make Cloud Scheduler and Cloud run communicate with authentication is fairly easy. First you need to create a service account for your scheduler that will have the `roles/run.invoker` role. When creating your scheduler, configure the `Configure the execution` as showed below.
 
-<p><img src="2023-02-13-service-to-service-communication-gcp-figure-01.png" class="article-img" title="Configure Scheduler" alt="scheduler-auth.png"></p>
+![](/images/2023-02-13-service-to-service-communication-gcp-figure-01.png)
 
 Note the Google-signed OpenID Connect (OIDC) token passed in the header of the request. It is a token signed by google that allows the scheduler to communicate with other services in a authenticated way. Two other services can automatically include an ID token, Cloud Task and Pub/Sub.
 

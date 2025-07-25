@@ -15,7 +15,7 @@ Apache Spark is an in-memory processing and analytics engine designed to be part
 
 In Spark, data is distributed across a cluster as partitions that are processed by different worker nodes. Usually partitions are 128 MB sized and evenly distributed. In reality however, some of your partitions can have significantly more records than others. Typically you face data skewness when using `join` or `groupBy` operations using a key that is not evenly distributed. This is not a Spark specific problem but keep in mind that the distribution of the data dramatically impacts on the performance of distributed systems. Let's imagine that in your workflow your data ends up being partitioned as shown below:
 
-<p><img src="content_drafts_2021-06-08-spark-performance-optimization_assets_skew_picture.png" class="article-img" title="Data skew" alt="Data skew"></p>
+![](/images/content_drafts_2021-06-08-spark-performance-optimization_assets_skew_picture.png)
 
 As partition one (P<sub>1</sub>) is around four times bigger than the others, it takes four time as much time and requires four time as much RAM to process P<sub>1</sub>. Consequently, the entire Spark job is slower. More specifically, the stage, including these tasks, takes as much time as the P<sub>1</sub> processing task. Finally, when P<sub>1</sub> does not fit in memory, Spark raises out-of-memory (OOM) errors or undergo some **spill** on disk, another issue described later.
 
@@ -53,7 +53,7 @@ When the partitions are to big and cannot fit in memory, Spark moves the data on
 
 - Using the `union()` operation. This operation takes two DataFrames and combine them into one and always use the same number of partitions that it started with. As depicted below we start with two DataFrame (DF1 & DF2) with a certain number of partitions and end up with the same number of concatenated partitions that are bigger.
 
-  <p><img src="content_drafts_2021-06-08-spark-performance-optimization_assets_union_picture.png" class="article-img" title="Spark Union" alt="Spark Union"></p>
+ ![](/images/content_drafts_2021-06-08-spark-performance-optimization_assets_union_picture.png)
 
 - Setting an inappropriate value (too big usually) to the `spark.sql.files.maxPartitionBytes` parameter (set to 128 MB by default). Our advice is to keep it at default and only alter it after some testing.
 
@@ -120,7 +120,7 @@ A quick answer would be to add more memory to your cluster's workers. If not pos
 
 **Shuffle** occurs when Spark needs to regroup data from different partitions to compute a final result. It is a side effect observed with wide transformations. These include for example the `groupBy()`, `distinct()` or `join()` operations. Let's explain shuffle by going through a quick and simple example involving a `groupBy()` combined with a `count()` operation.
 
-<p><img src="content_drafts_2021-06-08-spark-performance-optimization_assets_shuffle_example.png" class="article-img" title="Shuffling" alt="Shuffling"></p>
+![](/images/content_drafts_2021-06-08-spark-performance-optimization_assets_shuffle_example.png)
 
 First the data is read from source (i.e., HDFS, cloud storage, previous stage) *(1)*. At stage 1, Spark performs a **"mapping"** operation to identify which record belongs to which group *(2)*. Then data is prepared for the next partitions and **written on disk in shuffle files** *(3)*. For the next stage, data is **read from the shuffle files** and transferred through the network to the next executors *(4)* where a **"reduce"** operation is performed. Our final result is computed *(5)* and data written on disk *(6)*.
 

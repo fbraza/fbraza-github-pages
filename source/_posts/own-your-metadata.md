@@ -34,7 +34,7 @@ Alternatives are not lacking. But which one should you choose? Which one should 
 
 ### The type 1 architecture: a monolithic approach
 
-<p><img src="./2021-12-05-Own-your-metadata-with-metadata-hubs-figure-01.png" class="article-img" title="Type 1 architecture" alt="Type 1 architecture"></p>
+![](/images/2021-12-05-Own-your-metadata-with-metadata-hubs-figure-01.png)
 
 *Figure 1:* Type 1 architecture: reproduced and modified from [here](https://engineering.linkedin.com/blog/2020/datahub-popular-metadata-architectures-explained)
 
@@ -50,7 +50,7 @@ Despite its limited features, Admunsen remains a solid choice for data catalogin
 
 ### The type 2 architecture: a programmatic approach
 
-<p><img src="2021-12-05-Own-your-metadata-with-metadata-hubs-figure-02.png" class="article-img" title="Type 2 architecture" alt="Type 2 architecture"></p>
+![](/images/2021-12-05-Own-your-metadata-with-metadata-hubs-figure-02.png)
 
 *Figure 2:* Type 2 architecture: reproduced and modified from [here](https://engineering.linkedin.com/blog/2020/datahub-popular-metadata-architectures-explained)
 
@@ -68,7 +68,7 @@ Finally, keep in mind that such a system might not scale well, especially if you
 
 ### Marquez
 
-<p><img src="2021-12-05-Own-your-metadata-with-metadata-hubs-figure-03.png" class="article-img" title="Marquez Architecture" alt="Marquez"></p>
+![](/images/2021-12-05-Own-your-metadata-with-metadata-hubs-figure-03.png)
 
 *Figure 3:* Marquez architecture and API
 
@@ -86,7 +86,7 @@ To conclude, we think that Marquez is an interesting tool to start mastering and
 
 ### The type 3 architecture: a distributed approach
 
-<p><img src="2021-12-05-Own-your-metadata-with-metadata-hubs-figure-04.png" class="article-img" title="Type 3 architecture" alt="Type 3 architecture"></p>
+![](/images/2021-12-05-Own-your-metadata-with-metadata-hubs-figure-04.png)
 
 *Figure 4:* Type 3 architecture: reproduced and modified from [here](https://engineering.linkedin.com/blog/2020/datahub-popular-metadata-architectures-explained)
 
@@ -101,7 +101,7 @@ Do not forget that complexity comes as the main trade-off here. Such solutions r
 
 ### Apache Atlas
 
-<p><img src="2021-12-05-Own-your-metadata-with-metadata-hubs-figure-05.png" class="article-img" title="Apache Atlas architecture" alt="Apache Atlas"></p>
+![](/images/2021-12-05-Own-your-metadata-with-metadata-hubs-figure-05.png)
 
 **Figure 5:** Apache Atlas architecture: reproduced and modified from [here](https://developer.ibm.com/articles/apache-atlas-and-janusgraph-graph-based-meta-data-management/)
 
@@ -124,7 +124,7 @@ In conclusion, we think that Apache Atlas is worth investing in if your company 
 
 ### LinkedIn DataHub
 
-<p><img src="2021-12-05-Own-your-metadata-with-metadata-hubs-figure-06.png" class="article-img" title="Datahub architecture" alt="Datahub"></p>
+![](/images/2021-12-05-Own-your-metadata-with-metadata-hubs-figure-06.png)
 
 **Figure 6:** DataHub architecture, reproduced and modified from [here](https://datahubproject.io/docs/architecture/architecture)
 

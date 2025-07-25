@@ -3,11 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ""
-description: ""
+title: Faouzi.DEV
+subtitle: "A blog about data and software engineering"
+description: |
+  I’m **Faouzi Braza**, a data and software engineer. I worked as a data and software learning engineer at [AXA Belgium](https://www.axa.be/nl/), [Sunrise](https://www.hellosunrise.com/), at BioLizard(https://lizard.bio/home) and [Adaltas](https://www.adaltas.com/en/). I built data pipelines, trained and deploy machine learning models following MLOps practice. I have experrience in both AWS and GCP cloud. Feel free to engage with me and hope you enjoy the reading. Cheers.
 keywords:
-author: John Doe
+author: Faouzi Braza
 language: en
 timezone: "Europe/Brussels"
 
@@ -116,6 +117,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
-# Deployment
+theme: cactus
+theme_config:
+  colorscheme: white
 ## Docs: https://hexo.io/docs/one-command-deployment
