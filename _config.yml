@@ -14,7 +14,7 @@ timezone: "Europe/Brussels"
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://fbraza.github.io/fbraza.github.io
+url: https://fbraza.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -120,4 +120,3 @@ ignore:
 theme: cactus
 theme_config:
   colorscheme: white
-## Docs: https://hexo.io/docs/one-command-deployment
