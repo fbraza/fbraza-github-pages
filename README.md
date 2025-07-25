@@ -1,0 +1,3 @@
+# Faouzi.dev
+
+Personal blog.
