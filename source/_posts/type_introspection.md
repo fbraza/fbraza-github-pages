@@ -1,10 +1,11 @@
 ---
-title: Unlocking Python's type system: a brief overview of `inspect` and `typing` modules
+title: "Unlocking Python's type system: a brief overview of `inspect` and `typing` modules"
 summary: "Inspect Python's types"
 date: "2025-08-09"
 tags:
     - Python
 ---
+
 Python's type system has evolved significantly over the years, and with it, powerful tools for introspection and type manipulation have
 emerged. In this article, I'll explore some of the functions from the `inspect` and `typing` modules I have been using to build type-aware applications. Indeed if you app needs to understand function signatures and types at runtime, Python's `inspect` and `typing`
 modules become invaluable.
@@ -107,4 +108,3 @@ These functions are quite useful and helped me for:
 ## Conclusion
 
 The `inspect` and `typing` modules provide powerful tools for runtime type introspection and manipulation. By combining `inspect.signature()`, `typing.get_type_hints()`, `typing.get_origin()`, and `typing.get_args()`, you can build sophisticated frameworks that understand and work with Python's type system dynamically. So if you need to understand function signatures or work with types at runtime, remember these powerful tools that Python provides right out of the box!
-
